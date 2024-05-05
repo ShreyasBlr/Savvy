@@ -6,7 +6,6 @@ const TransactionsList = ({ transactions }) => {
       {transactions.map((transaction) => (
         <TransactionCard key={transaction._id} transaction={transaction} />
       ))}
-      ;
     </div>
   );
 };

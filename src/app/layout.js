@@ -25,13 +25,17 @@ export const metadata = {
 
 export const viewport = {
   themeColor: "#38315D",
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.className} max-w-md mx-auto bg-gray-800 h-dvh flex flex-col`}
+        className={`${inter.className} max-w-md mx-auto bg-gray-800 h-dvh flex flex-col relative`}
       >
         <DashboardLayout>{children}</DashboardLayout>
       </body>
