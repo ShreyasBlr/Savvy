@@ -10,7 +10,10 @@ import {
 
 const TransactionFilter = ({ onFilter }) => {
   return (
-    <Select className="w-24" onValueChange={(value) => onFilter(value)}>
+    <Select
+      className="w-24 max-w-full"
+      onValueChange={(value) => onFilter(value)}
+    >
       <SelectTrigger className="w-24">
         <SelectValue placeholder="All" />
       </SelectTrigger>

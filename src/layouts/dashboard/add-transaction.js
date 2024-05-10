@@ -36,7 +36,7 @@ export function AddTransaction() {
   };
 
   return (
-    <Dialog>
+    <Dialog className="max-w-md">
       <DialogTrigger asChild>
         <Button variant="link" className="px-0">
           <Iconify
@@ -46,7 +46,7 @@ export function AddTransaction() {
           />
         </Button>
       </DialogTrigger>
-      <DialogContent className="xs:max-w-[325px]">
+      <DialogContent className="max-w-[325px]">
         <form onSubmit={handleAddTransaction} className="flex flex-col gap-6">
           <DialogHeader>
             <DialogTitle>Add Transaction</DialogTitle>

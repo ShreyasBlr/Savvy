@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.className} max-w-md mx-auto bg-gray-800 h-dvh flex flex-col relative`}
+        className={`${inter.className} bg-gray-800 h-dvh flex flex-col relative`}
       >
         <DashboardLayout>{children}</DashboardLayout>
       </body>
