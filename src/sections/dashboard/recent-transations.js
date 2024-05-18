@@ -6,11 +6,11 @@ import TransactionCard from "../common/transaction-card";
 const RecentTransactions = () => {
   const recentTransactions = transactions.slice(0, 4);
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between">
-        <h2 className="text-slate-200 text-xl font-semibold">
+        <h5 className="text-slate-200 text-md font-semibold">
           Recent transactions
-        </h2>
+        </h5>
         <Button variant="ghost" className="text-slate-200">
           View all
           <Iconify

@@ -8,7 +8,7 @@ import { AddTransaction } from "./add-transaction";
 const Navbar = () => {
   const theme = useTheme();
   return (
-    <Card className="flex items-center justify-around p-6 bg-slate-950 text-slate-200 border-none rounded-2xl fixed bottom-0 left-0 right-0 max-w-md mx-auto">
+    <Card className="flex items-center justify-around p-6 pb-9 bg-slate-950 text-slate-200 border-none rounded-2xl fixed bottom-0 left-0 right-0 max-w-md mx-auto">
       <Link className={`px-0 ${buttonVariants({ variant: "link" })}`} href="/">
         <Iconify
           icon="solar:home-smile-angle-bold-duotone"

@@ -23,16 +23,23 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 import useTheme from "@/hooks/useTheme";
+import { useState } from "react";
 
 export function AddTransaction() {
   const theme = useTheme();
+
+  const [transaction_type, setTransactionType] = useState("expense");
+
+  const handleTypeChange = (value) => {
+    setTransactionType(value);
+  };
 
   const handleAddTransaction = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const formDataObj = Object.fromEntries(formData.entries());
-    console.log(formDataObj);
+    console.log({ ...formDataObj, transaction_type });
   };
 
   return (
@@ -51,12 +58,22 @@ export function AddTransaction() {
           <DialogHeader>
             <DialogTitle>Add Transaction</DialogTitle>
           </DialogHeader>
-          <div className="grid w-full max-w-sm items-center gap-2">
+          <div className="grid w-full max-w-sm items-center gap-5">
             <Label htmlFor="type">Transaction Type</Label>
-            <RadioGroup defaultValue="expense" id="type" name="type">
-              <div className="flex items-center space-x-2">
+            <RadioGroup
+              id="type"
+              name="type"
+              value={transaction_type}
+              onValueChange={handleTypeChange}
+            >
+              <div className="flex items-center gap-2">
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="expense" id="expense" />
+                  <RadioGroupItem value="expense" id="expense">
+                    <Iconify
+                      icon="solar:alt-arrow-right-linear"
+                      className="w-4 h-4"
+                    />
+                  </RadioGroupItem>
                   <Label htmlFor="expense">Expense</Label>
                 </div>
                 <div className="flex items-center space-x-2">

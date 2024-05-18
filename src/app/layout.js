@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import DashboardLayout from "@/layouts/dashboard";
+import { UserProvider } from "@/context/user";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,9 +35,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.className} bg-gray-800 h-dvh flex flex-col relative`}
+        className={`${inter.className} bg-gray-900 h-dvh flex flex-col relative`}
       >
-        <DashboardLayout>{children}</DashboardLayout>
+        <UserProvider>
+          <div className="max-w-md mx-auto h-full w-full">{children}</div>
+        </UserProvider>
       </body>
     </html>
   );

@@ -1,7 +1,17 @@
-import DashboardView from "@/sections/dashboard/views/dashboard-view";
+"use client";
 
-const Dashboard = () => {
-  return <DashboardView />;
+import { useEffect } from "react";
+import { path_after_login } from "@/config-global";
+import { useRouter } from "next/navigation";
+
+const RootPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push(path_after_login);
+  }, [router]);
+
+  return null;
 };
 
-export default Dashboard;
+export default RootPage;
