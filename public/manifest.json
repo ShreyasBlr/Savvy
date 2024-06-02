@@ -1,6 +1,6 @@
 {
-  "name": "Kharchu",
-  "short_name": "Kharchu",
+  "name": "Savvy",
+  "short_name": "Savvy",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png",
@@ -19,8 +19,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#38315D",
-  "background_color": "#141B23",
+  "theme_color": "#101827",
+  "background_color": "#101827",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"

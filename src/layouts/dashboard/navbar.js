@@ -21,7 +21,7 @@ const Navbar = () => {
 
       <Link
         className={`px-0 ${buttonVariants({ variant: "link" })}`}
-        href="/transactions"
+        href="/dashboard/transactions"
       >
         <Iconify
           icon="solar:transfer-vertical-bold-duotone"

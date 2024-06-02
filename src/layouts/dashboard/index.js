@@ -1,11 +1,10 @@
-import Header from "./header";
+import Header from "../../components/header";
 import Navbar from "./navbar";
 
 const DashboardLayout = ({ children }) => {
   return (
     <>
-      <Header />
-      <main className="px-3 pt-[80px] pb-[200px] h-[100dvh]">{children}</main>
+      <main className="px-3 pt-[20px] pb-[120px] h-[100dvh]">{children}</main>
       <Navbar />
     </>
   );
