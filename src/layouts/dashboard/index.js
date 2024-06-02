@@ -4,7 +4,7 @@ import Navbar from "./navbar";
 const DashboardLayout = ({ children }) => {
   return (
     <>
-      <main className="px-3 pt-[20px] pb-[120px] h-[100dvh]">{children}</main>
+      <main className="px-3 pt-[10px] pb-[120px] h-[100dvh]">{children}</main>
       <Navbar />
     </>
   );
