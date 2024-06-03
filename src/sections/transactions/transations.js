@@ -6,6 +6,7 @@ import transactions from "@/data/transactions";
 
 import TransactionFilter from "./transaction-filter";
 import TransactionsList from "./transactions-list";
+import CustomBreadcrumbs from "@/components/custom-breadcrumbs";
 
 const RecentTransactions = () => {
   const [filteredData, setFilteredData] = useState(transactions);
@@ -18,10 +19,10 @@ const RecentTransactions = () => {
   };
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-between">
-        <h2 className="text-slate-200 text-xl font-semibold">Transactions</h2>
-        <TransactionFilter onFilter={filterTransactions} />
-      </div>
+      <CustomBreadcrumbs
+        title="Transactions"
+        action={<TransactionFilter onFilter={filterTransactions} />}
+      />
       <TransactionsList transactions={filteredData} />
     </div>
   );
