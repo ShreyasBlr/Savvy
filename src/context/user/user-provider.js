@@ -83,7 +83,7 @@ export const UserProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      throw new Error(error.message);
+      throw new Error(error);
     }
   }, []);
 

@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import useTheme from "@/hooks/useTheme";
 import { useUserContext } from "@/context/user";
 
+import { toast } from "sonner";
+
 const LoginForm = () => {
   const theme = useTheme();
 
@@ -19,8 +21,10 @@ const LoginForm = () => {
       const formData = new FormData(form);
       const formDataObj = Object.fromEntries(formData.entries());
       await login(formDataObj);
+      toast("Logged-in successfully");
     } catch (error) {
       console.log(error);
+      toast(error.message);
     }
   };
 
@@ -31,11 +35,11 @@ const LoginForm = () => {
       </h2>
       <form onSubmit={handleLogin} className="flex flex-col gap-4">
         <div className="w-full flex flex-col gap-2">
-          <Label htmlFor="email" className="pl-1 ">
+          <Label htmlFor="email" className="text-md p-1 ">
             Email
           </Label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-2">
+            <div className="absolute inset-y-0 left-0 flex items-center pl-4">
               <Iconify
                 icon="solar:letter-linear"
                 className="w-4 h-4"
@@ -43,7 +47,7 @@ const LoginForm = () => {
               />
             </div>
             <Input
-              className="pl-8"
+              className="text-md h-18 py-4 pl-12"
               type="email"
               inputMode="email"
               id="email"
@@ -53,11 +57,11 @@ const LoginForm = () => {
           </div>
         </div>
         <div className="w-full flex flex-col gap-2">
-          <Label htmlFor="password" className="pl-1 ">
+          <Label htmlFor="password" className="text-md p-1">
             Password
           </Label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-2">
+            <div className="absolute inset-y-0 left-0 flex items-center pl-4">
               <Iconify
                 icon="solar:lock-password-linear"
                 className="w-4 h-4"
@@ -65,7 +69,7 @@ const LoginForm = () => {
               />
             </div>
             <Input
-              className="pl-8"
+              className="text-md h-18 py-4 pl-12"
               type="password"
               id="password"
               name="password"

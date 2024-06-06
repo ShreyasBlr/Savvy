@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { UserProvider } from "@/context/user";
 
+import { Toaster } from "@/components/ui/sonner";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -38,6 +40,7 @@ export default function RootLayout({ children }) {
         className={`${inter.className} bg-gray-900 h-dvh flex flex-col relative`}
       >
         <UserProvider>
+          <Toaster />
           <div className="max-w-md mx-auto h-full w-full">{children}</div>
         </UserProvider>
       </body>

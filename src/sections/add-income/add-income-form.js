@@ -37,9 +37,15 @@ const AddIncomeForm = () => {
               <SelectValue placeholder="Select a category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              <SelectItem value="light" className="text-md h-10 py-2">
+                Light
+              </SelectItem>
+              <SelectItem value="dark" className="text-md h-10 py-2">
+                Dark
+              </SelectItem>
+              <SelectItem value="system" className="text-md h-10 py-2">
+                System
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>
