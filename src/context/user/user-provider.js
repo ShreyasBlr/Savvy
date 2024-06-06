@@ -87,6 +87,18 @@ export const UserProvider = ({ children }) => {
     }
   }, []);
 
+  const logout = useCallback(async () => {
+    try {
+      await axiosInstance.post(endpoints.users.logout);
+
+      dispatch({
+        type: "LOGOUT",
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
+  }, []);
+
   useEffect(() => {
     initialize();
   }, [initialize]);
@@ -105,8 +117,9 @@ export const UserProvider = ({ children }) => {
       unauthenticated: status === "unauthenticated",
       //
       login,
+      logout,
     }),
-    [state.user, status, login]
+    [state.user, status, login, logout]
   );
 
   return (

@@ -15,7 +15,7 @@ const AddIncomeForm = () => {
   return (
     <form className="w-100 p-1">
       <div className="flex flex-col gap-5 mt-5 p:1">
-        <div className="grid w-full max-w-sm items-center gap-1.5">
+        <div className="grid w-full items-center gap-1.5">
           <Label className="text-md p-1" htmlFor="amount">
             Amount
           </Label>
@@ -28,7 +28,7 @@ const AddIncomeForm = () => {
             className="text-md h-18 py-4"
           />
         </div>
-        <div className="grid w-full max-w-sm items-center gap-1.5">
+        <div className="grid w-full items-center gap-1.5">
           <Label className="text-md p-1" htmlFor="category">
             Category
           </Label>
@@ -49,7 +49,7 @@ const AddIncomeForm = () => {
             </SelectContent>
           </Select>
         </div>
-        <div className="grid w-full max-w-sm items-center gap-1.5">
+        <div className="grid w-full items-center gap-1.5">
           <Label className="text-md p-1" htmlFor="description">
             Description
           </Label>
@@ -60,7 +60,7 @@ const AddIncomeForm = () => {
             className="text-md py-4"
           />
         </div>
-        <Button type="submit" className="text-md h-18 py-4 mt-3">
+        <Button type="submit" className="text-md h-16 py-4 mt-3">
           <Iconify icon="ph:plus-bold" />
           &nbsp; ADD
         </Button>

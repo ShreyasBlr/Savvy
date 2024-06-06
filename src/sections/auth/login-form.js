@@ -47,7 +47,7 @@ const LoginForm = () => {
               />
             </div>
             <Input
-              className="text-md h-18 py-4 pl-12"
+              className="text-md h-12 py-4 pl-12"
               type="email"
               inputMode="email"
               id="email"
@@ -69,7 +69,7 @@ const LoginForm = () => {
               />
             </div>
             <Input
-              className="text-md h-18 py-4 pl-12"
+              className="text-md h-12 py-4 pl-12"
               type="password"
               id="password"
               name="password"
@@ -78,7 +78,7 @@ const LoginForm = () => {
           </div>
         </div>
         <div className="w-full mt-3">
-          <Button className="w-full" type="submit">
+          <Button className="w-full text-md h-12 py-4" type="submit">
             LOGIN
           </Button>
         </div>

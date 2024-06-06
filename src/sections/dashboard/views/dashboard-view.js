@@ -1,4 +1,4 @@
-import Header from "@/components/header";
+import Header from "../header";
 import IncomeExpenseWidget from "../income-expense-widget";
 import RecentTransactions from "../recent-transations";
 
