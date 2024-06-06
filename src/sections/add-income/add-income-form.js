@@ -25,7 +25,7 @@ const AddIncomeForm = () => {
             id="amount"
             name="amount"
             placeholder="Enter amount"
-            className="text-md h-18 py-4"
+            className="text-md h-12 py-4"
           />
         </div>
         <div className="grid w-full items-center gap-1.5">
@@ -33,7 +33,7 @@ const AddIncomeForm = () => {
             Category
           </Label>
           <Select id="category" name="category">
-            <SelectTrigger className="w-full text-md h-18 py-4">
+            <SelectTrigger className="w-full text-md h-12 py-4">
               <SelectValue placeholder="Select a category" />
             </SelectTrigger>
             <SelectContent>
@@ -60,7 +60,7 @@ const AddIncomeForm = () => {
             className="text-md py-4"
           />
         </div>
-        <Button type="submit" className="text-md h-16 py-4 mt-3">
+        <Button type="submit" className="text-md h-12 py-4 mt-3">
           <Iconify icon="ph:plus-bold" />
           &nbsp; ADD
         </Button>
