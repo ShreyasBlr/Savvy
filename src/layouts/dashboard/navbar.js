@@ -46,7 +46,7 @@ const Navbar = () => {
 
       <Link
         className={`px-0 ${buttonVariants({ variant: "link" })}`}
-        href="/categories"
+        href="/dashboard/categories"
       >
         <Iconify
           icon="material-symbols:category-rounded"

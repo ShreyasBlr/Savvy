@@ -25,7 +25,7 @@ export function AddTransaction() {
       <DialogTrigger asChild>
         <Button
           variant="link"
-          className="px-0 mx-2 bg-purple-700 w-10 h-10 rounded-lg"
+          className="px-0 mx-2 bg-purple-600 text-slate-200 w-10 h-10 rounded-lg"
         >
           <Iconify
             icon="fa6-solid:plus"
