@@ -1,3 +1,6 @@
+"use client";
+
+import DatePicker from "@/components/date-picker";
 import Iconify from "@/components/iconify";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,11 +13,43 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const AddIncomeForm = () => {
+  const [transactionDate, setTransactionDate] = useState(new Date());
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const form = e.target;
+      const formData = new FormData(form);
+      const formDataObj = Object.fromEntries(formData.entries());
+      console.log(formDataObj);
+    } catch (error) {
+      console.log(error);
+      toast(error.message);
+    }
+  };
+
   return (
-    <form className="w-100 p-1">
+    <form className="w-100 p-1" onSubmit={handleSubmit}>
       <div className="flex flex-col gap-5 mt-5 p:1">
+        <div className="grid w-full items-center gap-1.5">
+          <DatePicker
+            value={transactionDate}
+            onChange={(date) => {
+              setTransactionDate(date);
+            }}
+            label="Transaction Date"
+          />
+          <Input
+            className="hidden"
+            id="date"
+            name="date"
+            defaultValue={transactionDate}
+          />
+        </div>
         <div className="grid w-full items-center gap-1.5">
           <Label className="text-md p-1" htmlFor="amount">
             Amount

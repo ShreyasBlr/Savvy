@@ -14,7 +14,7 @@ import { Separator } from "@/components/ui/separator";
 
 import useTheme from "@/hooks/useTheme";
 import Image from "next/image";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 
 export function AddTransaction() {

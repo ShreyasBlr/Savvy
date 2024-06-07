@@ -5,15 +5,14 @@ import { useEffect, useCallback } from "react";
 import { paths } from "@/routes/paths";
 import { useRouter } from "next/navigation";
 import { useUserContext } from "@/context/user";
+import SplashScreen from "@/components/splash-screen";
 
 // ----------------------------------------------------------------------
 
 export default function GuestGuard({ children }) {
   const { loading } = useUserContext();
 
-  return (
-    <>{loading ? <h1>Loading...</h1> : <Container> {children}</Container>}</>
-  );
+  return <>{loading ? <SplashScreen /> : <Container> {children}</Container>}</>;
 }
 
 // ----------------------------------------------------------------------
