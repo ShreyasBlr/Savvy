@@ -1,12 +1,13 @@
 import Iconify from "@/components/iconify";
 import useTheme from "@/hooks/useTheme";
+import { format } from "date-fns";
 
 const TransactionCard = ({ transaction }) => {
   const theme = useTheme();
-  const { type } = transaction;
+  const { transaction_type } = transaction;
   return (
     <div className="p-4 bg-slate-950 rounded-2xl text-slate-200 flex items-center justify-start gap-5">
-      {type === "income" ? (
+      {transaction_type === "income" ? (
         <Iconify
           icon="solar:round-arrow-left-down-bold-duotone"
           className="w-9 h-9"
@@ -20,12 +21,16 @@ const TransactionCard = ({ transaction }) => {
         />
       )}
       <div className="w-2/5">
-        <h3 className="text-md font-medium truncate">{transaction.category}</h3>
+        <h3 className="text-md font-medium truncate">
+          {transaction.category?.name}
+        </h3>
         <p className="text-sm font-light truncate">{transaction.description}</p>
       </div>
       <div className="ml-auto">
         <h3 className="text-md text-right font-medium">{transaction.amount}</h3>
-        <p className="text-sm font-light text-ellipsis">{transaction.date}</p>
+        <p className="text-sm font-light text-ellipsis">
+          {format(new Date(transaction.date), "PPP")}
+        </p>
       </div>
     </div>
   );

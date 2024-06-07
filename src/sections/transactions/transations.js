@@ -1,30 +1,37 @@
 "use client";
 
-import { useState } from "react";
-
-import transactions from "@/data/transactions";
+import { useState, useEffect, useCallback } from "react";
 
 import TransactionFilter from "./transaction-filter";
 import TransactionsList from "./transactions-list";
 import CustomBreadcrumbs from "@/components/custom-breadcrumbs";
+import getTransactions from "@/services/transactions/get-transactions";
 
-const RecentTransactions = () => {
-  const [filteredData, setFilteredData] = useState(transactions);
-  const filterTransactions = (value) => {
-    setFilteredData(
-      value === "all"
-        ? transactions
-        : transactions.filter((transaction) => transaction.type === value)
-    );
+const Transactions = () => {
+  const [transactions, setTransactions] = useState([]);
+
+  const fetchTransactions = useCallback(async () => {
+    const data = await getTransactions();
+    setTransactions(data);
+  }, []);
+
+  useEffect(() => {
+    fetchTransactions();
+  }, [fetchTransactions]);
+
+  const handleFilter = async (type) => {
+    const data = await getTransactions({ [type]: true });
+    setTransactions(data);
   };
+
   return (
     <div className="flex flex-col gap-3">
       <CustomBreadcrumbs
         title="Transactions"
-        action={<TransactionFilter onFilter={filterTransactions} />}
+        action={<TransactionFilter onFilter={handleFilter} />}
       />
-      <TransactionsList transactions={filteredData} />
+      <TransactionsList transactions={transactions} />
     </div>
   );
 };
-export default RecentTransactions;
+export default Transactions;

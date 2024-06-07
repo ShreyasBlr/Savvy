@@ -14,11 +14,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import getCategories from "@/services/categories/get-categories";
+import createTransaction from "@/services/transactions/create-transaction";
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 
-const AddIncomeForm = () => {
+const AddEditTransactionForm = ({ type, currTransaction }) => {
   const [transactionDate, setTransactionDate] = useState(new Date());
+  const [categories, setCategories] = useState([]);
+
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,12 +32,28 @@ const AddIncomeForm = () => {
       const form = e.target;
       const formData = new FormData(form);
       const formDataObj = Object.fromEntries(formData.entries());
-      console.log(formDataObj);
+      await createTransaction({ ...formDataObj, transaction_type: type });
+      form.reset();
+      setTransactionDate(new Date());
+      toast("Transaction created successfully");
+      router.push("/dashboard/transactions");
     } catch (error) {
       console.log(error);
       toast(error.message);
     }
   };
+
+  const fetchCategories = useCallback(async () => {
+    const data = await getCategories({
+      income: type === "income",
+      expense: type === "expense",
+    });
+    setCategories(data);
+  }, [type]);
+
+  useEffect(() => {
+    fetchCategories();
+  }, [fetchCategories]);
 
   return (
     <Card className="w-full p-3">
@@ -74,15 +96,15 @@ const AddIncomeForm = () => {
                 <SelectValue placeholder="Select a category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="light" className="text-md h-10 py-2">
-                  Light
-                </SelectItem>
-                <SelectItem value="dark" className="text-md h-10 py-2">
-                  Dark
-                </SelectItem>
-                <SelectItem value="system" className="text-md h-10 py-2">
-                  System
-                </SelectItem>
+                {categories.map((category) => (
+                  <SelectItem
+                    key={category._id}
+                    value={category._id}
+                    className="text-md h-10 py-2"
+                  >
+                    {category.name}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
@@ -106,4 +128,4 @@ const AddIncomeForm = () => {
     </Card>
   );
 };
-export default AddIncomeForm;
+export default AddEditTransactionForm;

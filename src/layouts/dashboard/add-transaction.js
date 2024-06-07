@@ -39,7 +39,11 @@ export function AddTransaction() {
           <DialogTitle>Add Transaction</DialogTitle>
         </DialogHeader>
         <DialogClose asChild>
-          <button onClick={() => router.push("/dashboard/add-income")}>
+          <button
+            onClick={() =>
+              router.push("/dashboard/add-transaction?type=income")
+            }
+          >
             <div className="flex flex-col gap-4 justify-center items-center">
               <Image
                 src={"/illustrations/income.png"}
@@ -53,7 +57,11 @@ export function AddTransaction() {
         </DialogClose>
         <Separator className="my-4" />
         <DialogClose asChild>
-          <button onClick={() => router.push("/dashboard/add-expense")}>
+          <button
+            onClick={() =>
+              router.push("/dashboard/add-transaction?type=expense")
+            }
+          >
             <div className="flex flex-col gap-4 justify-center items-center">
               <Image
                 src={"/illustrations/expense.png"}

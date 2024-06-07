@@ -1,11 +1,22 @@
-import transactions from "@/data/transactions";
+"use client";
 import { Button } from "@/components/ui/button";
 import Iconify from "@/components/iconify";
 import TransactionCard from "../common/transaction-card";
 import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
+import getTransactions from "@/services/transactions/get-transactions";
 
 const RecentTransactions = () => {
-  // const recentTransactions = transactions.slice(0, 4);
+  const [transactions, setTransactions] = useState([]);
+
+  const fetchTransactions = useCallback(async () => {
+    const data = await getTransactions();
+    setTransactions(data);
+  }, []);
+
+  useEffect(() => {
+    fetchTransactions();
+  }, [fetchTransactions]);
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between">

@@ -1,10 +1,10 @@
 import axiosInstance, { endpoints } from "@/utils/axios";
 
-const getCategories = async (type) => {
+const getTransactions = async (type) => {
   const income = Boolean(type?.income);
   const expense = Boolean(type?.expense);
   try {
-    const response = await axiosInstance.get(endpoints.categories.root, {
+    const response = await axiosInstance.get(endpoints.transactions.root, {
       params: {
         income,
         expense,
@@ -16,4 +16,4 @@ const getCategories = async (type) => {
   }
 };
 
-export default getCategories;
+export default getTransactions;

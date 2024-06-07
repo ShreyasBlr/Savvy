@@ -43,6 +43,7 @@ export const endpoints = {
   },
   transactions: {
     root: "/transactions",
+    byId: (id) => `/transactions/${id}`,
   },
   categories: {
     root: "/categories",
