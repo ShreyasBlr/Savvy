@@ -23,11 +23,14 @@ export function AddTransaction() {
   return (
     <Dialog className="max-w-lg">
       <DialogTrigger asChild>
-        <Button variant="link" className="px-0">
+        <Button
+          variant="link"
+          className="px-0 mx-2 bg-purple-700 w-10 h-10 rounded-lg"
+        >
           <Iconify
-            icon="solar:add-circle-bold"
-            className="w-16 h-16"
-            color={theme.colors.slate[0]}
+            icon="fa6-solid:plus"
+            className="w-6 h-6"
+            color={theme.colors.slate[200]}
           />
         </Button>
       </DialogTrigger>
