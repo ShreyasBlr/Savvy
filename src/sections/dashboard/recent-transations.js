@@ -22,9 +22,14 @@ const RecentTransactions = () => {
           </Button>
         </Link>
       </div>
-      {recentTransactions.map((transaction) => (
-        <TransactionCard key={transaction._id} transaction={transaction} />
-      ))}
+      <div className="flex flex-col gap-2 h-[calc(100dvh-375px)] overflow-y-scroll no-scrollbar">
+        {recentTransactions.map((transaction) => (
+          <TransactionCard key={transaction._id} transaction={transaction} />
+        ))}
+        {recentTransactions.map((transaction) => (
+          <TransactionCard key={transaction._id} transaction={transaction} />
+        ))}
+      </div>
     </div>
   );
 };
