@@ -5,7 +5,7 @@ import TransactionCard from "../common/transaction-card";
 import Link from "next/link";
 
 const RecentTransactions = () => {
-  const recentTransactions = transactions.slice(0, 4);
+  // const recentTransactions = transactions.slice(0, 4);
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between">
@@ -23,10 +23,7 @@ const RecentTransactions = () => {
         </Link>
       </div>
       <div className="flex flex-col gap-2 h-[calc(100dvh-375px)] overflow-y-scroll no-scrollbar">
-        {recentTransactions.map((transaction) => (
-          <TransactionCard key={transaction._id} transaction={transaction} />
-        ))}
-        {recentTransactions.map((transaction) => (
+        {transactions.map((transaction) => (
           <TransactionCard key={transaction._id} transaction={transaction} />
         ))}
       </div>

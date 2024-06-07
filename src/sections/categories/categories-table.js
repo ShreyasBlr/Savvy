@@ -12,7 +12,7 @@ import {
 import CategoriesTableRow from "./categories-table-row";
 import { Card } from "@/components/ui/card";
 
-const IncomeCategoriesTable = ({ categories }) => {
+const CategoriesTable = ({ categories, fetchCategories }) => {
   return (
     <Card>
       <Table>
@@ -25,7 +25,11 @@ const IncomeCategoriesTable = ({ categories }) => {
         </TableHeader>
         <TableBody>
           {categories.map((cat) => (
-            <CategoriesTableRow key={cat._id} row={cat} />
+            <CategoriesTableRow
+              key={cat._id}
+              row={cat}
+              fetchCategories={fetchCategories}
+            />
           ))}
         </TableBody>
         <TableFooter className="bg-gray-700">
@@ -42,4 +46,4 @@ const IncomeCategoriesTable = ({ categories }) => {
     </Card>
   );
 };
-export default IncomeCategoriesTable;
+export default CategoriesTable;

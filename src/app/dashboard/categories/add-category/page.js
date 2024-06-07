@@ -1,6 +1,6 @@
-import AddCategoryView from "@/sections/categories/views/add-category-view";
+import AddEditCategoryView from "@/sections/categories/views/add-edit-category-view";
 
 const AddCategoryPage = () => {
-  return <AddCategoryView />;
+  return <AddEditCategoryView />;
 };
 export default AddCategoryPage;
