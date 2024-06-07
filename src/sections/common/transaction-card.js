@@ -5,7 +5,7 @@ const TransactionCard = ({ transaction }) => {
   const theme = useTheme();
   const { type } = transaction;
   return (
-    <div className="p-4 bg-slate-950 rounded-2xl text-slate-200 flex items-center justify-start gap-5 border-none shadow-custom-sm">
+    <div className="p-4 bg-slate-950 rounded-2xl text-slate-200 flex items-center justify-start gap-5">
       {type === "income" ? (
         <Iconify
           icon="solar:round-arrow-left-down-bold-duotone"
