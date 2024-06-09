@@ -21,18 +21,6 @@ export default axiosInstance;
 
 // ----------------------------------------------------------------------
 
-export const fetcher = async (args) => {
-  const [url, config] = Array.isArray(args) ? args : [args];
-
-  const res = await axiosInstance.get(url, { ...config });
-
-  console.log(res.data);
-
-  return res.data;
-};
-
-// ----------------------------------------------------------------------
-
 export const endpoints = {
   users: {
     root: "/users",
