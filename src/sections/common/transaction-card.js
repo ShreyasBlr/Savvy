@@ -1,5 +1,6 @@
 import Iconify from "@/components/iconify";
 import useTheme from "@/hooks/useTheme";
+import { currencyformatter } from "@/utils/format-number";
 import { format } from "date-fns";
 
 const TransactionCard = ({ transaction }) => {
@@ -27,7 +28,9 @@ const TransactionCard = ({ transaction }) => {
         <p className="text-sm font-light truncate">{transaction.description}</p>
       </div>
       <div className="ml-auto">
-        <h3 className="text-md text-right font-medium">{transaction.amount}</h3>
+        <h3 className="text-md text-right font-medium">
+          {currencyformatter(transaction.amount)}
+        </h3>
         <p className="text-sm font-light text-ellipsis">
           {format(new Date(transaction.date), "PPP")}
         </p>

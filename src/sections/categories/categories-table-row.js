@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/popover";
 import { TableCell, TableRow } from "@/components/ui/table";
 import deleteCategory from "@/services/categories/delete-category";
+import { currencyformatter } from "@/utils/format-number";
 import { useRouter } from "next/navigation";
 
 const CategoriesTableRow = ({ row, fetchCategories }) => {
@@ -29,7 +30,7 @@ const CategoriesTableRow = ({ row, fetchCategories }) => {
   return (
     <TableRow>
       <TableCell className="font-medium">{row.name}</TableCell>
-      <TableCell>{row.budget}</TableCell>
+      <TableCell>{currencyformatter(row.budget)}</TableCell>
       <TableCell className="text-right">
         <Popover>
           <PopoverTrigger asChild>

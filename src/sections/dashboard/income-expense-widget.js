@@ -1,6 +1,7 @@
 "use client";
 
 import getMonthlySummary from "@/services/transactions/get-monthly-summary";
+import { currencyformatter } from "@/utils/format-number";
 import { format } from "date-fns";
 import { useEffect, useState } from "react";
 
@@ -25,13 +26,13 @@ const IncomeExpenseWidget = () => {
         <div className="flex flex-col gap-2 rounded-xl bg-slate-950 p-4 w-full">
           <h5 className="text-green-500 text-sm font-normal">Total Income</h5>
           <h5 className="text-green-500 text-xl font-medium">
-            &#8377; {summary?.income}
+            {currencyformatter(summary?.income)}
           </h5>
         </div>
         <div className="flex flex-col gap-2 rounded-xl bg-slate-950 p-4 w-full">
           <h5 className="text-red-600 text-sm font-normal">Total Expenses</h5>
           <h5 className="text-red-600 text-xl font-medium">
-            &#8377; {summary?.expense}
+            {currencyformatter(summary?.expense)}
           </h5>
         </div>
       </div>

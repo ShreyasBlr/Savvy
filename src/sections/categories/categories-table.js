@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/table";
 import CategoriesTableRow from "./categories-table-row";
 import { Card } from "@/components/ui/card";
+import { currencyformatter } from "@/utils/format-number";
 
 const CategoriesTable = ({ categories, fetchCategories }) => {
   return (
@@ -38,7 +39,11 @@ const CategoriesTable = ({ categories, fetchCategories }) => {
               <b>Total</b>
             </TableCell>
             <TableCell colSpan={2} className="rounded-br-md">
-              <b>{categories.reduce((acc, cat) => acc + +cat.budget, 0)}</b>
+              <b>
+                {currencyformatter(
+                  categories.reduce((acc, cat) => acc + +cat.budget, 0)
+                )}
+              </b>
             </TableCell>
           </TableRow>
         </TableFooter>
