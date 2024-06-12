@@ -28,33 +28,39 @@ const AccountPopover = () => {
   };
 
   return (
-    <Popover>
-      <PopoverTrigger>
-        <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-      </PopoverTrigger>
-      <PopoverContent className="w-40 p-0 mr-3">
-        <ul>
-          <li className="w-full p-3 border-b">
-            <button className="w-full flex items-center justify-between">
-              Profile
-              <Iconify icon="carbon:user" />
-            </button>
-          </li>
-          <li className="w-full p-3">
-            <button
-              className="w-full flex items-center justify-between text-red-500"
-              onClick={handleLogout}
-            >
-              Logout
-              <Iconify icon="carbon:logout" />
-            </button>
-          </li>
-        </ul>
-      </PopoverContent>
-    </Popover>
+    // <Popover>
+    //   <PopoverTrigger>
+    //     <Avatar>
+    //       <AvatarImage src="https://github.com/shadcn.png" />
+    //       <AvatarFallback>CN</AvatarFallback>
+    //     </Avatar>
+    //   </PopoverTrigger>
+    //   <PopoverContent className="w-40 p-0 mr-3">
+    //     <ul>
+    //       <li className="w-full p-3 border-b">
+    //         <button className="w-full flex items-center justify-between">
+    //           Profile
+    //           <Iconify icon="carbon:user" />
+    //         </button>
+    //       </li>
+    //       <li className="w-full p-3">
+    //         <button
+    //           className="w-full flex items-center justify-between text-red-500"
+    //           onClick={handleLogout}
+    //         >
+    //           Logout
+    //           <Iconify icon="carbon:logout" />
+    //         </button>
+    //       </li>
+    //     </ul>
+    //   </PopoverContent>
+    // </Popover>
+    <button
+      className="w-10 h-10 flex items-center justify-center text-red-500"
+      onClick={handleLogout}
+    >
+      <Iconify icon="solar:logout-3-line-duotone" className="w-6 h-6" />
+    </button>
   );
 };
 export default AccountPopover;
