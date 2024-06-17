@@ -41,7 +41,9 @@ export default function RootLayout({ children }) {
       >
         <UserProvider>
           <Toaster />
-          <div className="max-w-md mx-auto h-full w-full">{children}</div>
+          <div id="root" className="max-w-md mx-auto h-full w-full">
+            {children}
+          </div>
         </UserProvider>
       </body>
     </html>
