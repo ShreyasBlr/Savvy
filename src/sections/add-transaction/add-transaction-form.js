@@ -61,7 +61,7 @@ const AddEditTransactionForm = ({ type, currTransaction }) => {
         <div className="flex flex-col gap-5 p:1">
           <div className="grid w-full items-center gap-1.5">
             <DatePicker
-              value={transactionDate}
+              defaultValue={transactionDate}
               onChange={(date) => {
                 setTransactionDate(date);
               }}
@@ -80,7 +80,8 @@ const AddEditTransactionForm = ({ type, currTransaction }) => {
             </Label>
             <Input
               type="number"
-              inputMode="numeric"
+              inputMode="decimal"
+              step=".01"
               id="amount"
               name="amount"
               placeholder="Enter amount"

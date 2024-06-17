@@ -94,7 +94,8 @@ const AddEditCategoryView = ({ currCategory }) => {
               </Label>
               <Input
                 type="number"
-                inputMode="numeric"
+                inputMode="decimal"
+                step=".01"
                 id="budget"
                 name="budget"
                 placeholder="Enter budget for category"
