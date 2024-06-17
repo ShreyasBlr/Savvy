@@ -28,6 +28,7 @@ export const endpoints = {
     logout: "/users/logout",
     profile: "/users/profile",
     register: "/users/register",
+    startingBalance: "/users/starting-balance",
   },
   transactions: {
     root: "/transactions",
