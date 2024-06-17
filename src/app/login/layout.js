@@ -5,7 +5,7 @@ const LoginLayout = ({ children }) => {
   return (
     <GuestGaurd>
       <PreventSwipeBack />
-      <div id="root">{children}</div>
+      {children}
     </GuestGaurd>
   );
 };
