@@ -29,7 +29,7 @@ const TransactionCard = ({ transaction }) => {
       </div>
       <div className="ml-auto">
         <h3 className="text-md text-right font-medium">
-          {currencyformatter(transaction.amount)}
+          {currencyformatter(transaction.amount.$numberDecimal)}
         </h3>
         <p className="text-sm font-light text-ellipsis">
           {format(new Date(transaction.date), "PPP")}
