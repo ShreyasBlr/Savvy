@@ -30,7 +30,8 @@ const CategoriesTableRow = ({ row, fetchCategories }) => {
   return (
     <TableRow>
       <TableCell className="font-medium">{row.name}</TableCell>
-      <TableCell>{currencyformatter(row.budget?.$numberDecimal)}</TableCell>
+      {/* <TableCell>{currencyformatter(row.budget?.$numberDecimal)}</TableCell> */}
+      <TableCell>{currencyformatter(row.plannedAmount)}</TableCell>
       <TableCell className="text-right">
         <Popover>
           <PopoverTrigger asChild>

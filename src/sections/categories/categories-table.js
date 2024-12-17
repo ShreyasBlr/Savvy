@@ -41,11 +41,14 @@ const CategoriesTable = ({ categories, fetchCategories }) => {
             <TableCell colSpan={2} className="rounded-br-md">
               <b>
                 {currencyformatter(
+                  categories.reduce((acc, cat) => acc + +cat.plannedAmount, 0)
+                )}
+                {/* {currencyformatter(
                   categories.reduce(
                     (acc, cat) => acc + +cat.budget.$numberDecimal,
                     0
                   )
-                )}
+                )} */}
               </b>
             </TableCell>
           </TableRow>
