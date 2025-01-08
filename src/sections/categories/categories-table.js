@@ -20,7 +20,7 @@ const CategoriesTable = ({ categories, fetchCategories }) => {
         <TableHeader>
           <TableRow>
             <TableHead className="w-1/2">Category</TableHead>
-            <TableHead className="w-1/3">Budget</TableHead>
+            <TableHead className="w-1/3">Planned amount</TableHead>
             <TableHead className="text-right"></TableHead>
           </TableRow>
         </TableHeader>

@@ -41,9 +41,6 @@ const IncomeExpenseWidget = () => {
 
   return (
     <div className="flex flex-col gap-2 my-5">
-      <h5 className="text-slate-200 text-md font-semibold">
-        {format(new Date(), "MMMM yyyy")}
-      </h5>
       <div className="flex gap-2 rounded-xl bg-slate-950 p-4 w-full justify-between items-end">
         <div className="flex flex-col gap-1">
           <h4 className="text-slate-200 text-sm font-normal">Total Balance</h4>
@@ -96,6 +93,9 @@ const IncomeExpenseWidget = () => {
           </div>
         </div>
       </div>
+      <h5 className="text-slate-200 text-md font-semibold">
+        {format(new Date(), "MMMM yyyy")}
+      </h5>
       <div className="flex gap-2 w-full">
         <div className="flex flex-col gap-1 rounded-xl bg-slate-950 p-4 w-full">
           <h5 className="text-green-500 text-sm font-normal">Total Income</h5>

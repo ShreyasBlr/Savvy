@@ -32,7 +32,7 @@ const AddEditTransactionForm = ({ type, currTransaction }) => {
       const form = e.target;
       const formData = new FormData(form);
       const formDataObj = Object.fromEntries(formData.entries());
-      await createTransaction({ ...formDataObj, transaction_type: type });
+      await createTransaction({ ...formDataObj, type });
       form.reset();
       setTransactionDate(new Date());
       toast("Transaction created successfully");
@@ -61,7 +61,7 @@ const AddEditTransactionForm = ({ type, currTransaction }) => {
         <div className="flex flex-col gap-5 p:1">
           <div className="grid w-full items-center gap-1.5">
             <DatePicker
-              defaultValue={transactionDate}
+              defaultValue={new Date()}
               onChange={(date) => {
                 setTransactionDate(date);
               }}
@@ -71,7 +71,8 @@ const AddEditTransactionForm = ({ type, currTransaction }) => {
               className="hidden"
               id="date"
               name="date"
-              defaultValue={transactionDate}
+              value={transactionDate}
+              readOnly
             />
           </div>
           <div className="grid w-full items-center gap-1.5">

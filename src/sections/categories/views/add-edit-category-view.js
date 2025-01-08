@@ -32,11 +32,11 @@ const AddEditCategoryView = ({ currCategory }) => {
       if (currCategory) {
         await updateCategory(currCategory._id, formDataObj);
         toast("Category updated successfully");
-        router.push(`/dashboard/categories?tab=${currCategory.cat_type}`);
+        router.push(`/dashboard/categories?tab=${currCategory.type}`);
       } else {
         await createCategory(formDataObj);
         toast("Category created successfully");
-        router.push(`/dashboard/categories?tab=${formDataObj.cat_type}`);
+        router.push(`/dashboard/categories?tab=${formDataObj.type}`);
       }
     } catch (error) {
       console.log(error);
@@ -54,10 +54,10 @@ const AddEditCategoryView = ({ currCategory }) => {
           <div className="flex flex-col gap-5 p:1">
             {!currCategory && (
               <div className="grid w-full items-center gap-1.5">
-                <Label className="text-md p-1" htmlFor="cat_type">
+                <Label className="text-md p-1" htmlFor="type">
                   Category Type
                 </Label>
-                <Select id="cat_type" name="cat_type" required>
+                <Select id="type" name="type" required>
                   <SelectTrigger className="w-full text-md h-12 py-4">
                     <SelectValue placeholder="Select type" />
                   </SelectTrigger>
@@ -89,19 +89,19 @@ const AddEditCategoryView = ({ currCategory }) => {
             </div>
 
             <div className="grid w-full items-center gap-1.5">
-              <Label className="text-md p-1" htmlFor="budget">
-                Budget
+              <Label className="text-md p-1" htmlFor="plannedAmount">
+                Planned amount
               </Label>
               <Input
                 type="number"
                 inputMode="decimal"
                 step=".01"
-                id="budget"
-                name="budget"
-                placeholder="Enter budget for category"
+                id="plannedAmount"
+                name="plannedAmount"
+                placeholder="Enter planned amount for category"
                 className="text-md h-12 py-4"
                 required
-                defaultValue={currCategory?.budget || ""}
+                defaultValue={currCategory?.plannedAmount || ""}
               />
             </div>
 

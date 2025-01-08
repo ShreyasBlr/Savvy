@@ -5,10 +5,10 @@ import { format } from "date-fns";
 
 const TransactionCard = ({ transaction }) => {
   const theme = useTheme();
-  const { transaction_type } = transaction;
+  const { type } = transaction;
   return (
     <div className="p-4 bg-slate-950 rounded-2xl text-slate-200 flex items-center justify-start gap-5">
-      {transaction_type === "income" ? (
+      {type === "income" ? (
         <Iconify
           icon="solar:round-arrow-left-down-bold-duotone"
           className="w-9 h-9"
